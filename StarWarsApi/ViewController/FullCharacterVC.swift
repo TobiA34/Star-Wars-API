@@ -26,7 +26,7 @@ class FullCharacterVC: UIViewController {
         return name
     }()
     
-    let height: UILabel = {
+    let personHeight: UILabel = {
         let height = UILabel()
         height.translatesAutoresizingMaskIntoConstraints = false
         return height
@@ -76,16 +76,15 @@ class FullCharacterVC: UIViewController {
     
     let card: UIView = {
         let card = UIView()
-        card.layer.cornerRadius = 10;
-        card.layer.masksToBounds = true;
-        card.backgroundColor = .cyan
         card.translatesAutoresizingMaskIntoConstraints = false
+        card.backgroundColor = .cyan
+        card.layer.cornerRadius = 8
         return card
     }()
-    
+
     func configure() {
         name.text = character?.name
-        height.text = character?.height
+        personHeight.text = character?.height
         hairColor.text = character?.hair_color
         eyeColor.text = character?.eye_color
         birthYear.text = character?.birth_year
@@ -102,7 +101,7 @@ class FullCharacterVC: UIViewController {
     func setupConstraint() {
         view.addSubview(card)
         card.addSubview(name)
-        card.addSubview(height)
+        card.addSubview(personHeight)
         card.addSubview(hairColor)
         card.addSubview(eyeColor)
         card.addSubview(birthYear)
@@ -112,40 +111,40 @@ class FullCharacterVC: UIViewController {
         NSLayoutConstraint.activate([
             
             card.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 10),
-            card.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            card.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant:20),
             card.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -20),
-            card.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,constant: -10),
-            card.heightAnchor.constraint(equalToConstant: 200),
-            card.widthAnchor.constraint(equalToConstant: 200),
             
             
-            name.topAnchor.constraint(equalTo: card.topAnchor,constant: 5),
-            name.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant:20),
-            name.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
+            name.topAnchor.constraint(equalTo: card.safeAreaLayoutGuide.topAnchor,constant: 10),
+            name.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant:20),
+            name.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
-            height.topAnchor.constraint(equalTo: name.bottomAnchor,constant: 5),
-            height.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            height.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
+            hairColor.topAnchor.constraint(equalTo: name.bottomAnchor,constant: 10),
+            hairColor.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            hairColor.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
-            hairColor.topAnchor.constraint(equalTo: height.bottomAnchor,constant: 5),
-            hairColor.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            hairColor.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
+            eyeColor.topAnchor.constraint(equalTo: hairColor.bottomAnchor,constant: 10),
+            eyeColor.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            eyeColor.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
-            eyeColor.topAnchor.constraint(equalTo: hairColor.bottomAnchor,constant: 5),
-            eyeColor.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            eyeColor.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
+            personHeight.topAnchor.constraint(equalTo: eyeColor.bottomAnchor,constant: 10),
+            personHeight.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            personHeight.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
-            birthYear.topAnchor.constraint(equalTo: eyeColor.bottomAnchor,constant: 5),
-            birthYear.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            birthYear.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
             
-            gender.topAnchor.constraint(equalTo: birthYear.bottomAnchor,constant: 5),
-            gender.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            gender.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20),
+            birthYear.topAnchor.constraint(equalTo: personHeight.bottomAnchor,constant: 10),
+            birthYear.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            birthYear.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
             
-            homeworld.topAnchor.constraint(equalTo: gender.bottomAnchor,constant: 5),
-            homeworld.leadingAnchor.constraint(equalTo: card.leadingAnchor,constant: 20),
-            homeworld.trailingAnchor.constraint(equalTo: card.trailingAnchor,constant: -20)
+            gender.topAnchor.constraint(equalTo: birthYear.bottomAnchor,constant: 10),
+            gender.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            gender.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            
+            homeworld.topAnchor.constraint(equalTo: gender.bottomAnchor,constant: 10),
+            homeworld.leadingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.leadingAnchor,constant: 20),
+            homeworld.trailingAnchor.constraint(equalTo: card.safeAreaLayoutGuide.trailingAnchor,constant: -20),
+            homeworld.bottomAnchor.constraint(equalTo: card.safeAreaLayoutGuide.bottomAnchor,constant: -10)
+
         ])
     }
     
@@ -154,6 +153,5 @@ class FullCharacterVC: UIViewController {
         setupView()
         self.navigationItem.title = character?.name
     }
-    
 }
  

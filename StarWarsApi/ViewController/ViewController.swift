@@ -8,6 +8,7 @@
 import UIKit
 class ViewController: UIViewController {
     let starWarsService = StarWarsService()
+    let myIndicator = UIActivityIndicatorView(style: .large)
     private var datasource: Array<Character> = [] {
         didSet{
             tableView.reloadData()
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
         setupView()
         tableView.dataSource = self
         tableView.delegate = self
-        self.navigationItem.title = "Characters"
+        self.navigationItem.title = Title.name
     }
 }
 
@@ -57,6 +58,7 @@ extension ViewController: UITableViewDataSource {
         let character = datasource[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: StarWarsTableviewCell.cellID, for: indexPath) as! StarWarsTableviewCell
         cell.configure(character: character)
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -70,14 +72,33 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController {
-    func getAllStarWarsCharacters(){
+    func getAllStarWarsCharacters() {
+        self.loadIndicator()
         starWarsService.getCharacter { res in
             switch res {
             case .success(let character):
                 self.datasource = character
             case .failure(let error):
+                self.show(title: "Failed", message: "Failed to show api", buttonTitle: "Ok")
                 print(error)
             }
+            self.stopIndicator()
         }
     }
+}
+
+
+extension ViewController {
+    
+    func loadIndicator(){
+        myIndicator.center = self.view.center
+        self.view.addSubview(myIndicator)
+        myIndicator.bringSubviewToFront(self.view)
+        myIndicator.startAnimating()
+    }
+    
+    func stopIndicator(){
+        myIndicator.stopAnimating()
+    }
+    
 }
