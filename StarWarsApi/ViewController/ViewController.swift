@@ -18,13 +18,14 @@ class ViewController: UIViewController {
     let tableView: UITableView = {
         let tableview = UITableView()
         tableview.translatesAutoresizingMaskIntoConstraints = false
+        tableview.backgroundColor = .clear
         return tableview
     }()
     
     func setupView() {
-        view.backgroundColor = .white
         setupConstraint()
-        self.navigationController?.navigationBar.barTintColor = .yellow
+        view.backgroundColor = Colour.background
+        self.navigationController?.navigationBar.barTintColor =  Colour.brown
         getAllStarWarsCharacters()
         tableView.register(StarWarsTableviewCell.self, forCellReuseIdentifier: StarWarsTableviewCell.cellID)
     }

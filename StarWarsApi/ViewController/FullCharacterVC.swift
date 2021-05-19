@@ -23,61 +23,70 @@ class FullCharacterVC: UIViewController {
     let name: UILabel = {
         let name = UILabel()
         name.translatesAutoresizingMaskIntoConstraints = false
+        name.textColor = Colour.textColour
         return name
     }()
     
     let personHeight: UILabel = {
         let height = UILabel()
         height.translatesAutoresizingMaskIntoConstraints = false
+        height.textColor = Colour.textColour
         return height
     }()
     
     let mass: UILabel = {
         let mass = UILabel()
         mass.translatesAutoresizingMaskIntoConstraints = false
+        mass.textColor = Colour.textColour
         return mass
     }()
     
     let hairColor: UILabel = {
         let hairColor = UILabel()
         hairColor.translatesAutoresizingMaskIntoConstraints = false
+        hairColor.textColor = Colour.textColour
         return hairColor
     }()
     
     let skinColor: UILabel = {
         let skinColor = UILabel()
         skinColor.translatesAutoresizingMaskIntoConstraints = false
+        skinColor.textColor = Colour.textColour
         return skinColor
     }()
     
     let eyeColor: UILabel = {
         let eyeColor = UILabel()
         eyeColor.translatesAutoresizingMaskIntoConstraints = false
+        eyeColor.textColor = Colour.textColour
         return eyeColor
     }()
     
     let birthYear: UILabel = {
         let birthYear = UILabel()
         birthYear.translatesAutoresizingMaskIntoConstraints = false
+        birthYear.textColor = Colour.textColour
         return birthYear
     }()
     
     let gender: UILabel = {
         let gender = UILabel()
         gender.translatesAutoresizingMaskIntoConstraints = false
+        gender.textColor = Colour.textColour
         return gender
     }()
     
     let homeworld: UILabel = {
         let homeworld = UILabel()
         homeworld.translatesAutoresizingMaskIntoConstraints = false
+        homeworld.textColor = Colour.textColour
         return homeworld
     }()
     
     let card: UIView = {
         let card = UIView()
         card.translatesAutoresizingMaskIntoConstraints = false
-        card.backgroundColor = .cyan
+        card.backgroundColor = Colour.brown
         card.layer.cornerRadius = 8
         return card
     }()
@@ -93,7 +102,7 @@ class FullCharacterVC: UIViewController {
     }
     
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = Colour.background
         setupConstraint()
         configure()
     }

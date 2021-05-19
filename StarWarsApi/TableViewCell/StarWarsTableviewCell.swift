@@ -14,11 +14,12 @@ class StarWarsTableviewCell: UITableViewCell {
     let starWarsName: UILabel = {
         let starWarsName = UILabel()
         starWarsName.translatesAutoresizingMaskIntoConstraints = false
-        starWarsName.textColor = .black
+        starWarsName.textColor = Colour.textColour
         return starWarsName
     }()
     
     func setupView() {
+        contentView.backgroundColor = Colour.background
        contentView.addSubview(starWarsName)
        NSLayoutConstraint.activate([
            starWarsName.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),

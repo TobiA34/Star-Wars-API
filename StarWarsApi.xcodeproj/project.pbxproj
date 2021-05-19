@@ -11,6 +11,7 @@
 		BD6789A125F154AE00208B45 /* FullCharacterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6789A025F154AE00208B45 /* FullCharacterVC.swift */; };
 		BD8E8FBF26443B9100772620 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E8FBE26443B9100772620 /* Title.swift */; };
 		BD8E8FC226443C6A00772620 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8E8FC126443C6A00772620 /* UIViewController+Alert.swift */; };
+		BDC0F736265574F900AFCCFC /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC0F735265574F900AFCCFC /* Colour.swift */; };
 		BDE519BA25F0F5B600E00969 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE519B925F0F5B600E00969 /* AppDelegate.swift */; };
 		BDE519BC25F0F5B600E00969 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE519BB25F0F5B600E00969 /* SceneDelegate.swift */; };
 		BDE519BE25F0F5B600E00969 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE519BD25F0F5B600E00969 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		BD6789A025F154AE00208B45 /* FullCharacterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullCharacterVC.swift; sourceTree = "<group>"; };
 		BD8E8FBE26443B9100772620 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		BD8E8FC126443C6A00772620 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		BDC0F735265574F900AFCCFC /* Colour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 		BDCF91754AECBE8EEB0EFFE8 /* Pods-StarWarsApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWarsApi.debug.xcconfig"; path = "Target Support Files/Pods-StarWarsApi/Pods-StarWarsApi.debug.xcconfig"; sourceTree = "<group>"; };
 		BDE519B625F0F5B600E00969 /* StarWarsApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWarsApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE519B925F0F5B600E00969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				BDE519D325F0F63100E00969 /* StarWars.swift */,
 				BD8E8FBE26443B9100772620 /* Title.swift */,
+				BDC0F735265574F900AFCCFC /* Colour.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				BD6789A125F154AE00208B45 /* FullCharacterVC.swift in Sources */,
 				BDE519DA25F0F64100E00969 /* StarWarsService.swift in Sources */,
 				BDE519BE25F0F5B600E00969 /* ViewController.swift in Sources */,
+				BDC0F736265574F900AFCCFC /* Colour.swift in Sources */,
 				BD8E8FC226443C6A00772620 /* UIViewController+Alert.swift in Sources */,
 				BDE519BA25F0F5B600E00969 /* AppDelegate.swift in Sources */,
 				BDE519BC25F0F5B600E00969 /* SceneDelegate.swift in Sources */,
