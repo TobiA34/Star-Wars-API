@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             
             let window = UIWindow(windowScene: windowScene)
-            let random = ViewController()
+            let random = CharacterViewController()
             let navigation = UINavigationController(rootViewController: random)
             window.rootViewController = navigation
             self.window = window

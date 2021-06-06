@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class ViewController: UIViewController {
+class CharacterViewController: UIViewController {
     let starWarsService = StarWarsService()
     let myIndicator = UIActivityIndicatorView(style: .large)
     private var datasource: Array<Character> = [] {
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension CharacterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datasource.count
     }
@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension CharacterViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let character = datasource[indexPath.row]
         let characterFullScreen = FullCharacterVC(character: character)
@@ -72,7 +72,7 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension ViewController {
+extension CharacterViewController {
     func getAllStarWarsCharacters() {
         self.loadIndicator()
         starWarsService.getCharacter { res in
@@ -89,7 +89,7 @@ extension ViewController {
 }
 
 
-extension ViewController {
+extension CharacterViewController {
     
     func loadIndicator(){
         myIndicator.center = self.view.center
